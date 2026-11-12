@@ -44,6 +44,10 @@ public class Tarefa {
         return titulo;
     }
 
+    public String obterDescricao() {
+        return descricao;
+    }
+
     public int obterEstimativaHoras() {
         return estimativaHoras;
     }
