@@ -37,7 +37,6 @@ public class GestorTarefas {
             maiorPrioridade = tarefa;
         }
     }
-
         return maiorPrioridade;
     }
 
@@ -55,6 +54,17 @@ public class GestorTarefas {
                 System.out.println(tarefa.obterTitulo());
             }
         }
+    }
+
+    public int contarConcluidas() {
+        int quantidade = 0;
+
+        for (Tarefa tarefa : tarefas) {
+            if (tarefa.estaConcluida()) {
+                quantidade++;
+            }
+        }
+        return quantidade;
     }
 
     public int contarPendentes() {
