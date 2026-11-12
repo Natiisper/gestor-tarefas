@@ -86,7 +86,7 @@ public class AplicacaoGestorTarefas {
         }
 
         System.out.println();
-
+        System.out.println("Tarefas pendentes: " + gestor.contarPendentes());
         gestor.iniciarTarefasPendentes();
         gestor.exibirResumo();
     }
