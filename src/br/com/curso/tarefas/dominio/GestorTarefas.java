@@ -22,15 +22,7 @@ public class GestorTarefas {
             }
         }
         return null;
-    }
-
-    public void exibirTarefasDoResponsavel(String matricula) {
-        for (Tarefa tarefa : tarefas) {
-            if (tarefa.possuiResponsavel(matricula)) {
-                System.out.println(tarefa.obterTitulo());
-            }
-        }
-    }    
+    }   
 
     public Tarefa buscarMaiorPrioridade() {
         if (tarefas.size() == 0) {
@@ -53,6 +45,14 @@ public class GestorTarefas {
         for (Tarefa tarefa : tarefas) {
             if (tarefa.estaPendente()) {
                 tarefa.iniciar();
+            }
+        }
+    }
+
+    public void exibirTarefasDoResponsavel(String matricula) {
+        for (Tarefa tarefa : tarefas) {
+            if (tarefa.possuiResponsavel(matricula)) {
+                System.out.println(tarefa.obterTitulo());
             }
         }
     }
