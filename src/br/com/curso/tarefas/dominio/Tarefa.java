@@ -48,6 +48,10 @@ public class Tarefa {
         return descricao;
     }
 
+    public LocalDate obterDataLimite() {
+        return dataLimite;
+    }
+
     public int obterEstimativaHoras() {
         return estimativaHoras;
     }
