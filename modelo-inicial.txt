@@ -53,3 +53,29 @@ Responsabilidade: representar um responsável
 br.com.curso.tarefas.AplicacaoGestorTarefas
 br.com.curso.tarefas.dominio.Tarefa
 br.com.curso.tarefas.dominio.Responsavel
+
+
+Relacionamentos do Tópico 4
+
+Tarefa tem um Responsavel.
+GestorTarefas possui várias Tarefa.
+TarefaComum é uma Tarefa.
+TarefaUrgente é uma Tarefa.
+
+
+Hierarquia do Tópico 4
+
+Tarefa
+|- TarefaComum
+|- TarefaUrgente
+
+Comportamentos comuns:
+- cadastrar dados básicos
+- iniciar
+- registrar hora trabalhada
+- concluir
+- consultar código, título e situação
+
+Comportamentos que variam:
+- calcular prioridade
+- informar o tipo da tarefa

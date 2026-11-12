@@ -3,7 +3,7 @@ package br.com.curso.tarefas.dominio;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
-public class Tarefa {
+public abstract class Tarefa implements Priorizavel {
     private String codigo;
     private String titulo;
     private String descricao;
@@ -15,7 +15,7 @@ public class Tarefa {
     private BigDecimal custoEstimado;
     private Responsavel responsavel;
 
-    public void cadastrar(
+    protected void cadastrarTarefa(
         String codigo,
         String titulo,
         String descricao,
@@ -114,6 +114,10 @@ public class Tarefa {
         return custoEstimado.compareTo(limite) > 0;
     }
 
+    public boolean possuiResponsavel(String matricula) {
+        return responsavel.obterMatricula().equals(matricula);
+    }
+
     public String obterSituacao() {
         if (concluida) {
             return "CONCLUÍDA";
@@ -123,4 +127,13 @@ public class Tarefa {
             return "PENDENTE";
         }
     }
+
+    public boolean estaPendente() {
+        return !emAndamento && !concluida;
+    }
+
+    @Override
+    public abstract int calcularPrioridade();
+
+    public abstract String obterTipo();
 }
